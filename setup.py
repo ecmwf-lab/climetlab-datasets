@@ -20,10 +20,8 @@ def read(fname):
     return io.open(file_path, encoding="utf-8").read()
 
 
-version = "0.0.1"
+version = "0.0.3"
 
-
-# See https://python-packaging.readthedocs.io/en/latest/dependencies.html
 
 setuptools.setup(
     name="climetlab-datasets",
@@ -33,12 +31,13 @@ setuptools.setup(
     author="European Centre for Medium-Range Weather Forecasts (ECMWF)",
     author_email="software.support@ecmwf.int",
     license="Apache License Version 2.0",
-    url="https://github.com/ecmwf-lab/climetlab-sis-ai-competition",
+    url="https://github.com/ecmwf-lab/climetlab-datasets",
     packages=setuptools.find_packages(),
     include_package_data=True,
-    install_requires=[],
     zip_safe=True,
-    dependency_links=['http://github.com/user/repo/tarball/master#egg=package-1.0'],
+    install_requires=[
+        'climetlab-sis-ai-competition @ https://github.com/ecmwf-lab/climetlab-sis-ai-competition/archive/main.zip'
+    ],
     keywords="meteorology",
     classifiers=[
         "Development Status :: 3 - Alpha",
